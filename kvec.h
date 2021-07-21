@@ -87,4 +87,15 @@ int main() {
 						  : (v).n <= (size_t)(i)? (v).n = (i) + 1 \
 						  : 0), (v).a[(i)])
 
+#define kv_swap(type, x, y) do { type tmp = x; x = y; y = tmp; } while (0)
+
+
+#define kv_reverse(type, v) do {							\
+		for (int i = 0; i < (v).n; i++) {	\
+			if ((v).n - 1 - i > i) {	\
+			kv_swap(type, (v).a[i], (v).a[(v).n - 1 - i]); 	\
+			}	\
+		}	\
+	} while (0)
+
 #endif
